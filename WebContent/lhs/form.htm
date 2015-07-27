@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>作业情况查询</title>
+<link href="../common/css/base_css/base.css" rel="stylesheet" type="text/css">
+<link href="../common/css/base_css/dialog.css" rel="stylesheet" type="text/css">
+
+<link href="../common/css/admin/header.css?v=2" rel="stylesheet" type="text/css">
+<!-- --><link href="../common/css/admin/menu.css" rel="stylesheet" type="text/css"> 
+<link href="../common/css/admin/bar.css?v=2" rel="stylesheet" type="text/css">
+<link href="../common/css/admin/input.css?v=2" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../common/js/base_js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.metadata.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.methods.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.cn.js"></script>
+<script type="text/javascript" src="../common/js/base_js/jquery.tools.js"></script>
+<link href="../common/js/wbox/wbox/wbox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../common/js/wbox/wbox-min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../common/js/base_js/belatedPNG.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../common/js/base_js/base.js"></script>
+<script type="text/javascript" src="../common/js/base_js/dialog.js"></script><script type="text/javascript" src="../common/datepicker/WdatePicker.js"></script><link href="http://localhost:8080../common/datepicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../common/js/base_js/list.js"></script>
+
+<script type="text/javascript"> 
+$().ready(function() {
+	$(".main").click( function() {
+		
+		var mainFrameset = $("#menuContent");
+		var listTable = $(".listTable");
+		var body = $(".body");
+		var queryBar = $(".queryBar");
+		var listTableDiv = $(".listTableDiv");
+		
+		
+		//alert("  body:"+ body.width() +"  listTable:"+listTable.width()+"  queryBar:"+queryBar.width()+"  listTableDiv:"+listTableDiv.width()) 
+		if(!isHideMenu()) {
+			mainFrameset.hide();
+			$(".handle").css("marginLeft",0);
+			$(".main").removeClass("leftArrow");
+			$(".main").addClass("rightArrow");
+		} else {
+			mainFrameset.show(); 
+			$(".handle").css("marginLeft",160);
+			$(".main").removeClass("rightArrow");
+			$(".main").addClass("leftArrow");
+		}   
+	})
+})
+
+function isHideMenu(){
+	return $("#menuContent").is(":hidden")
+}
+</script>
+</head>
+<body class="list header menu">
+<!-- top 区域  -->
+<div class="headbody">
+	<div class="headerLogo"></div>
+	<div class="headerTop">
+		<div class="headerLink">
+			<span class="welcome">
+				<strong>admin</strong>&nbsp;您好!&nbsp;
+			</span>
+			<a class="mForm" onclick="return false;" href="admin!middle.do" target="middleFrame">后台首页</a>|
+	    	<a href="http://www.wanchenginfo.com" target="_blank">技术支持22</a>|
+
+	        <a href="http://www.wanchenginfo.com" target="_blank">关于我们</a>|
+	        <a href="http://www.wanchenginfo.com" target="_blank">联系我们</a>
+		</div>
+	</div>
+	<div class="headerBottom">
+		<div class="headerMenu">
+			<div class="menuLeft"></div>
+			<ul>
+				<li><a id="first" href="admin!menu.do?id=408948963086eaab0130872966bd0002" target="menuFrame">生产运营</a></li>
+				<li><a href="admin!menu.do?id=408948963086eaab013087ae1ef00005" target="menuFrame">实时监控</a></li>
+				<li><a href="admin!menu.do?id=408948963086eaab013087acec9a0004" target="menuFrame">综合查询</a></li>
+				
+	            <li ><a class="mForm" onclick="return false;" href="admin!middle.do" target="middleFrame" hidefocus="true">综合查d</a></li>
+	        </ul>
+	        <div class="menuRight"></div>
+		</div>
+		<div class="userInfo">
+			<a class="mForm" onclick="return false;" href="../sys/user!self.do" target="middleFrame">
+				<span class="profileIcon">&nbsp;</span>个人资料
+			</a>
+			<a href="../admin/logout" target="_top">
+				<span class="logoutIcon">&nbsp;</span>退出&nbsp;
+			</a>
+		</div>
+	</div>
+</div>
+<!-- end top  -->
+<!-- left menu -->
+<div id='menuContent' class="menuContent " >
+		<dl>
+			</dl>
+			<dl>
+				<dt>
+					<span>生产管理</span>
+				</dt>
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../task_plan!list.do" target="middleFrame" >作业计划</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../task!list.do" target="middleFrame" >作业情况登记</a>
+				</dd>	
+			</dl>
+			<dl>
+				<dt>
+					<span>设备管理日报表</span>
+				</dt>
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listEquipment.do" target="middleFrame" >设备故障</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listPlan.do" target="middleFrame" >计划工作</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!list.do" target="middleFrame" >完成情况</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listRemark.do" target="middleFrame" >备注</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!add.do" target="middleFrame" >导入</a>
+				</dd>	
+		</dl>
+	</div>
+<!-- end left menu --> 
+<div class="middle" style ="float:left;width:6px;height:100%;">
+	<div class="main leftArrow"  ></div>
+</div>
+ 
+ 
+<!-- handle -->
+<div class='handle'>
+	<div class="titleBar">
+		<span class="titleMessage">添加接载船信息</span>
+	</div>
+	<div class="body">
+	<form id="inputForm" class="validate" action="carry_ship!save.do" method="post">
+		<input type="hidden" name="carryShip.id" value="">
+		<div class="input">
+			<div class="littleBar">
+				<span class="littleMessage">基础信息</span>
+			</div>
+			<table class="inputTable tabContent">
+				<tbody><tr>
+					<th>
+						接载船:
+					</th>
+					<td>
+						<input type="text" id="name" name="carryShip.name" class="inputText" value="">
+						<label class="requireField">*</label>
+					</td>
+				</tr>
+				<tr>
+					<th>
+						所属公司:
+					</th>
+					<td>
+						<input type="text" id="company" name="carryShip.company.name" class="inputText ac_input" value="" autocomplete="off">
+						<label class="requireField">*</label>
+						&nbsp;&nbsp;
+						<input type="button" class="formButton" onclick="window.open('company!add.do')" value="新增">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						联系人:
+					</th>
+					<td>
+						<input type="text" id="linkman" name="carryShip.linkman" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						联系电话:
+					</th>
+					<td>
+						<input type="text" id="phone" name="carryShip.phone" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						载重吨:
+					</th>
+					<td>
+						<input type="text" id="capacity" name="carryShip.capacity" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						净吨:
+					</th>
+					<td>
+						<input type="text" id="netTon" name="carryShip.netTon" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						货舱数量:
+					</th>
+					<td>
+						<input type="text" id="warehouse" name="carryShip.warehouse" class="inputText {positiveInteger:true}" value="">
+					</td>
+				</tr>
+			</tbody></table>	
+			<div class="littleBar">
+				<span class="littleMessage">扩展信息</span>
+			</div>
+			<table class="inputTable tabContent">
+				<tbody><tr>
+					<th>
+						总长:
+					</th>
+					<td>
+						<input type="text" id="length" name="carryShip.length" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						型宽:
+					</th>
+					<td>
+						<input type="text" id="width" name="carryShip.width" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						型深:
+					</th>
+					<td>
+						<input type="text" id="depth" name="carryShip.depth" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						空载吃水:
+					</th>
+					<td>
+						<input type="text" id="waterlineEmpty" name="carryShip.waterlineEmpty" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						满载吃水:
+					</th>
+					<td>
+						<input type="text" id="waterlineFull" name="carryShip.waterlineFull" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						满载排水量 :
+					</th>
+					<td>
+						<input type="text" id="drain" name="carryShip.drain" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						载货量:
+					</th>
+					<td>
+						<input type="text" id="carry" name="carryShip.carry" class="inputText {positiveNull:true}" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						舱口盖类型:
+					</th>
+					<td>
+						<input type="text" id="hatch" name="carryShip.hatch" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						适载货种:
+					</th>
+					<td>
+						<input type="text" id="cargoFit" name="carryShip.cargoFit" class="inputText" value="">
+					</td>
+				</tr>
+				<tr>
+					<th>
+						航速:
+					</th>
+					<td>
+						<input type="text" id="speed" name="carryShip.speed" class="inputText" value="">
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="buttonArea">
+			<input id="submitButton" name="submitButton" type="button" class="formButton" value="确  定" hidefocus="true">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" class="formButton" onclick="window.history.back(); return false;" value="返  回" hidefocus="true">
+		</div>
+	</form>
+</div>
+</div> <!-- end handle  -->
+<div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 186px; height: 203px;" src="http://localhost:8080../common/datepicker/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

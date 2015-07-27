@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>test</title>
+<link href="wbox/wbox.css" rel="stylesheet" />
+<script language="javascript" src="jquery1.4.2.js"></script>
+<script language="javascript" src="wbox.js"></script>
+</head>
+<body>
+<script>
+ $(document).ready(function(){
+                                                                                                             
+  //可以根据需要添加wBox标题,用title定义，如title没定义，将显示wbox.js里title设置的值；
+  //可以用html定义wBox内容，如果没有定义，将显示wbox.js里html设置的值，默认  
+  /*
+  var wBox=$("#show_box").wBox({title: "My name is Adam Li.",html: "我的中文名叫李汉团！"});
+  */
+  //用timeout可以设置wBox显示的时间
+  //var wBox = $("#show_box").wBox({html:"My name is Adam",timeout:"5000"});
+  //通过noTitle:true可以设置弹出的wBox标题不显示
+  //var wBox = $("#show_box").wBox({noTitle:true,html:"My name is Adam",timeout:"5000"});
+  //通过requestType可以设置返回的图片、ajax加载其它页面的内容或iFrame 并显示于wbox中；
+  //var wBox = $("#show_box").wBox({noTitle:true,requestType:"img",target:"loading.gif"});
+  //var wBox = $("#show_box").wBox({noTitle:true,requestType:"ajax",target:"1.html"});
+  /*
+   varwBox=$("#show_box").wBox({
+    noTitle:true,requestType:"iframe",iframeWH:{width:"800px",height:"200px"},target:"http://www.baidu.com"
+   });
+  */
+  //var wBox = $("#show_box").wBox({noTitle:true,requestType:"iframe",iframeWH:{width:800,height:800},target:"1.html"});
+  //所有class为wBox_close的点击可以关闭wbox；
+  var wBox = $("#show_box").wBox({noTitle:true,requestType:"iframe",target:"1.html"});
+  $("#but").click(function(){
+   wBox.showBox();
+  })
+ })
+</script>
+<div id="show_box"></div>
+<input type="button" id="but" value="show box" />
+</body>
+</html>

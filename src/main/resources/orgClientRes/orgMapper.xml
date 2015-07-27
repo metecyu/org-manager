@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="ey.orgclient.serviceSqlImp.dao.OrgMapper">  
+
+    <select id="findById" parameterType="HashMap" resultType="Org">  
+        select  
+        * from org_org where id=#{id}  
+    </select>
+    
+    <select id="findByCode" parameterType="HashMap" resultType="Org">  
+        select  
+        * from org_org org where org.code=#{code}
+        	and org.iseffect='y'  
+    </select>    
+    
+    <select id="findByUserid" parameterType="HashMap" resultType="Org">  
+        SELECT org.* from ORG_ORG org,ORG_USER usr,ORG_USERORGREL rel
+			where org.id = REL.ORGID and usr."ID" = REL.USERID
+			and ORG.ISEFFECT='y'
+			and USR.id=#{userid}
+    </select>  
+    
+</mapper>  

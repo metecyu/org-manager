@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+">
+    <bean id="SystemConfig" class="ey.org.utils.SystemConfig">
+        <property name="flowCommMap">
+            <map>
+            	<!-- 计时员提交领航室 -->
+                <entry key="1_1"><value>flowComm_JSYTJLHS</value></entry>
+                <!-- 计时员送审 -->
+                <entry key="1_2"><value>flowComm_JSYSS</value></entry>
+                <!-- 计时员发布 -->
+                <entry key="1_3"><value>flowComm_JSYFB</value></entry>
+                <!-- 领航室提交 -->
+                <entry key="2_1"><value>flowComm_LHSSH</value></entry>
+                <!-- 航空军医提交 -->
+                <entry key="3_1"><value>flowComm_HKJYSH</value></entry>
+              	<!-- 团指挥员提交 -->
+                <entry key="4_1"><value>flowComm_TZHSH</value></entry>
+                <!-- 团首长提交 -->
+                <entry key="5_1"><value>flowComm_TSZSH</value></entry>
+                <!-- 机组 只读 -->
+                <entry key="7_1"><value>flowComm_JZSH</value></entry>
+                <!-- 作训室上报师部 -->
+                <entry key="8_1"><value>flowComm_ZXSSB</value></entry>
+                <!-- 提交场站 -->
+                <entry key="9_1"><value>flowComm_DDS_TJCZ</value></entry>
+                <!-- 完成实施-->
+                <entry key="12_1"><value>flowComm_DDS_WCSS</value></entry>
+                <!-- 完成讲评-->
+                <entry key="13_1"><value>flowComm_WCJP</value></entry>
+            </map>
+        </property>
+        
+         <property name="missionflowCommMap">
+            <map>
+                <!-- 作战科送审 --> 
+                <entry key="1_1"><value>flowComm_ZZKSS</value></entry>
+                <!-- 作战科下达 -->
+                <entry key="1_2"><value>flowComm_ZZKXD</value></entry>
+                <!-- 师领导审批 -->	
+                <entry key="2_1"><value>flowComm_SLDSP</value></entry>
+                <!-- 作战室(团)提交 -->
+                <entry key="3_1"><value>flowComm_TJLHS</value></entry>
+                <!-- 作战室(团)送审 --> 
+                <entry key="3_2"><value>flowComm_ZXSSS</value></entry>
+                <!-- 作战室(团)发布 -->
+                <entry key="3_3"><value>flowComm_ZZSFB</value></entry>
+                <!-- 领航室已审核 --> 
+                <entry key="4_1"><value>flowComm_LHS</value></entry>
+                <!-- 航空军医审核 --> 
+                <entry key="5_1"><value>flowComm_HKJY</value></entry>
+                <!-- 团指挥员审核 -->	
+                <entry key="6_1"><value>flowComm_TZH</value></entry>
+                <!-- 团首长审核 -->  
+                <entry key="7_1"><value>flowComm_TSZ</value></entry>
+                <!-- 航行科 只读 -->  
+                <entry key="8_1"><value>flowComm_HXK</value></entry>
+                <!-- 飞行大队 只读 -->
+                <entry key="9_1"><value>flowComm_FXDD</value></entry>
+                <!-- 机组 只读 -->  
+                <entry key="10_1"><value>flowComm_JZSH</value></entry>
+                <!-- 调度室 完成实施 -->  
+                <entry key="11_1"><value>flowComm_WCSS</value></entry>
+                <!-- 机务 完成讲评 --> 
+                <entry key="12_1"><value>flowComm_JW_WCJP</value></entry>
+            </map>
+        </property>
+    </bean>
+</beans>

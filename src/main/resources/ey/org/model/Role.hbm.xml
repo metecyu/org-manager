@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-8-28 10:39:03 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="ey.org.model.Role" table="ORG_ROLE">
+        <id name="id" type="string">
+            <column name="ID" length="200" />
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="rolename" type="string">
+            <column name="ROLENAME" length="200" />
+        </property>
+        <property name="rolesign" type="string">
+            <column name="ROLESIGN" length="200" />
+        </property>
+        <property name="iseffect" type="string">
+            <column name="ISEFFECT" length="200" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="200" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="SORT" precision="22" scale="0" />
+        </property>
+        <property name="orgid" type="string">
+            <column name="ORGID" length="200" />
+        </property>
+        <property name="details" type="string">
+            <column name="DETAILS" length="200" />
+        </property>
+        <property name="rolegroup" type="string">
+            <column name="ROLEGROUP" length="200" />
+        </property>
+        
+        
+    </class>
+</hibernate-mapping>

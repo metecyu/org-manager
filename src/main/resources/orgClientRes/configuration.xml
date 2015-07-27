@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>     
+<!DOCTYPE configuration     
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>  
+    <typeAliases>  
+        <!--给实体类起一个别名 user -->  
+        <typeAlias type="ey.orgclient.model.User" alias="User" />
+        <typeAlias type="ey.orgclient.model.Role" alias="Role" />
+        <typeAlias type="ey.orgclient.model.Func" alias="Func" />
+        <typeAlias type="ey.orgclient.model.Org" alias="Org" />    
+    </typeAliases>  
+    <!--数据源配置  这块用 BD2数据库 -->  
+    <environments default="development">  
+        <environment id="development">  
+            <transactionManager type="jdbc" />  
+            <!-- oracle 
+            <dataSource type="POOLED">  
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver" />  
+                <property name="url" value="jdbc:oracle:thin:@192.9.200.107:1521:orcl" />  
+                <property name="username" value="org" />  
+                <property name="password" value="org" />  
+            </dataSource>   -->
+            <!-- msyql -->
+            <dataSource type="POOLED">  
+                <property name="driver" value="com.mysql.jdbc.Driver" />  
+                <property name="url" value="jdbc:mysql://localhost:3306/orgdev?useUnicode=true&amp;characterEncoding=UTF-8" />  
+                <property name="username" value="root" />  
+                <property name="password" value="root" />  
+            </dataSource>  
+            
+        </environment>  
+    </environments>  
+    <mappers>  
+        <!--userMapper.xml装载进来  同等于把“dao”的实现装载进来 -->  
+        <mapper resource="./orgClientRes/userMapper.xml" />
+        <mapper resource="./orgClientRes/roleMapper.xml" />
+        <mapper resource="./orgClientRes/funcMapper.xml" />
+        <mapper resource="./orgClientRes/orgMapper.xml" />              
+    </mappers>  
+</configuration>

@@ -1,0 +1,19 @@
+INSERT INTO ORG_FUNC VALUES ('root', '所有功能', 'y', '3', '0', 'root', '0', '所有功能', null);
+
+INSERT INTO ORG_FUNCROLEREL VALUES ('root', null, null, 0, 'admin', null);
+
+INSERT INTO ORG_ORG VALUES ('root', 'name', '样例', 'y', '1', '1', null, '0', '样例');
+
+INSERT INTO ORG_ROLE VALUES ('admin', '超级管理员', 'admin', 'y', null, '1', 'root', '非常厉害的较色', null);
+
+
+INSERT INTO ORG_USER VALUES ('cjgly', 'admin', '超级管理员', 'y', '111111', null, null, null, null, null, null, null, null, null, null, null, null, null);
+
+
+INSERT INTO ORG_USERORGREL VALUES ('root', '0', 'y', 'cjgly', 'root');
+
+
+INSERT INTO ORG_USERROLEREL VALUES ('admin', null, 'cjgly', 'admin');
+
+
+INSERT INTO ORG_DATAROLEREL VALUES('root','root',null,'admin');

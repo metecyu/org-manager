@@ -1,0 +1,21 @@
+@charset "utf-8";
+ .tab {margin-top:10px;margin-left:30px;margin-bottom:-5px;height:12px} 
+ .tab_menu li {font-size:16px; color:#165f87;float:left; text-align:center; cursor:pointer; list-style:none; padding:1px 6px; margin-right:4px; background:#F1F1F1; border:1px solid #898989; border-bottom:none;background-image:url('btn.jpg');width:90px}
+ .tab_menu li.hover { background:#DFDFDF;}
+ .tab_menu li.selected { color:#FFF; background-image:url('btn2.jpg');width:90px;}
+ .clear{clear:both;}
+ 
+.listTableDiv{
+	width:100%;
+	overflow:auto;
+	max-height:495px;
+	margin-top:5px;
+}
+
+.listTable{
+	margin-top:0px;
+}
+
+.funcListTable{
+	margin-top:0px;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="ey.orgclient.serviceSqlImp.dao.UserMapper">  
+
+    <select id="findById" parameterType="HashMap" resultType="User">  
+        select  
+        * from org_user where id=#{id}  
+    </select>  
+    
+    <select id="findByLonginId" parameterType="HashMap" resultType="User">  
+        select  
+        	* from org_user usr where usr.loginid=#{id}  and usr.iseffect='y'
+    </select>  
+    
+</mapper>  

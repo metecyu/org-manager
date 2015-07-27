@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<type-mapping>
+	<sql-type jdbc-type="NUMERIC" hibernate-type="java.lang.Integer"
+		precision="22" not-null="false">
+	</sql-type>
+</type-mapping>
+
+<table-filter match-schema="ORG" match-name="ORG_FUNC" />
+	<table-filter match-schema="ORG" match-name="ORG_FUNCROLEREL" />
+	<table-filter match-schema="ORG" match-name="ORG_ORG" />
+	<table-filter match-schema="ORG" match-name="ORG_ROLE" />
+	<table-filter match-schema="ORG" match-name="ORG_USER" />
+	<table-filter match-schema="ORG" match-name="ORG_USERORGREL" />
+	<table-filter match-schema="ORG" match-name="ORG_USERROLEREL" />
+	<table name="ORG_USER" class="ey.org.model.User">
+		<primary-key>
+			<generator class="assigned"></generator>
+		</primary-key>
+		<column name="ID"></column>
+		<column name="LOGINID"></column>
+		<column name="USERNAME"></column>
+		<column name="ISEFFECT"></column>
+		<column name="PASSWORD"></column>
+		<column name="BIRTHDAY"></column>
+		<column name="MOBILE"></column>
+		<column name="FJH"></column>
+		<column name="FPHONE"></column>
+		<column name="SFZID"></column>
+		<column name="PYJC"></column>
+		<column name="PYQC"></column>
+		<column name="WORKSTATE"></column>
+		<column name="ORGTYPE"></column>
+		<column name="DUTY"></column>
+		<column name="DUTYDETAILS"></column>
+		<column name="EMAIL"></column>
+		<column name="GENDER"></column>
+	</table>
+<table name="ORG_FUNC" class="ey.org.model.Func">
+	<primary-key>
+		<generator class="uuid.hex"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="FUNCNAME"></column>
+	<column name="ISEFFECT"></column>
+	<column name="TYPE"></column>
+	<column name="SORT"></column>
+	<column name="CODE"></column>
+	<column name="PID"></column>
+	<column name="FUNCWHOLENAME"></column>
+	<column name="URL"></column>
+</table>
+<table name="ORG_USERORGREL" class="ey.org.model.UserOrgRel">
+	<primary-key>
+		<generator class="uuid.hex"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="ORG_ID"></column>
+	<column name="SORT"></column>
+	<column name="ISMAIN"></column>
+	<column name="USERID"></column>
+	<column name="ORGID"></column>
+</table>
+<table name="ORG_USERROLEREL" class="ey.org.model.UserRoleRel">
+	<primary-key>
+		<generator class="uuid.hex"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="SORT"></column>
+	<column name="USERID"></column>
+	<column name="ROLEID"></column>
+</table>
+<table name="ORG_ROLE" class="ey.org.model.Role">
+	<primary-key>
+		<generator class="uuid.hex"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="ROLENAME"></column>
+	<column name="ROLESIGN"></column>
+	<column name="ISEFFECT"></column>
+	<column name="TYPE"></column>
+	<column name="SORT"></column>
+	<column name="ORGID"></column>
+	<column name="DETAILS"></column>
+</table>
+<table name="ORG_FUNCROLEREL" class="ey.org.model.FuncRoleRel">
+	<primary-key>
+		<generator class="uuid.hex"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="ORG_ID"></column>
+	<column name="SORT"></column>
+	<column name="USERID"></column>
+	<column name="ROLEID"></column>
+</table>
+<table name="ORG_ORG" class="ey.org.model.Org">
+	<primary-key>
+		<generator class="assigned"></generator>
+	</primary-key>
+	<column name="ID"></column>
+	<column name="ORGNAME"></column>
+	<column name="SHORTNAME"></column>
+	<column name="ISEFFECT"></column>
+	<column name="TYPE"></column>
+	<column name="SORT"></column>
+	<column name="CODE"></column>
+	<column name="PID"></column>
+	<column name="ORGWHOLENAME"></column>
+</table>
+</hibernate-reverse-engineering>

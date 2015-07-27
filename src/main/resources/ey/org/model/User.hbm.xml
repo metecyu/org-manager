@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-8-28 10:39:03 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="ey.org.model.User" table="ORG_USER">
+        <id name="id" type="string">
+            <column name="ID" length="200" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="loginid" type="string">
+            <column name="LOGINID" length="200">
+                <comment>111</comment>
+            </column>
+        </property>
+        <property name="username" type="string">
+            <column name="USERNAME" length="200" />
+        </property>
+        <property name="iseffect" type="string">
+            <column name="ISEFFECT" length="200" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="200" />
+        </property>
+        <property name="birthday" type="date">
+            <column name="BIRTHDAY" length="7" />
+        </property>
+        <property name="mobile" type="string">
+            <column name="MOBILE" length="200" />
+        </property>
+        <property name="fjh" type="string">
+            <column name="FJH" length="200" />
+        </property>
+        <property name="fphone" type="string">
+            <column name="FPHONE" length="200" />
+        </property>
+        <property name="sfzid" type="string">
+            <column name="SFZID" length="200" />
+        </property>
+        <property name="pyjc" type="string">
+            <column name="PYJC" length="200" />
+        </property>
+        <property name="pyqc" type="string">
+            <column name="PYQC" length="200" />
+        </property>
+        <property name="workstate" type="string">
+            <column name="WORKSTATE" length="200" />
+        </property>
+        <property name="orgtype" type="string">
+            <column name="ORGTYPE" length="200" />
+        </property>
+        <property name="duty" type="string">
+            <column name="DUTY" length="200" />
+        </property>
+        <property name="dutydetails" type="string">
+            <column name="DUTYDETAILS" length="200" />
+        </property>
+        
+    <!-- new field ++email  wmc -->
+        <property name="email" type="string">
+        	<column name="EMAIL" length="200" />
+        </property>
+        
+    <!-- new field ++gender (1.male 0.female 2.secret) wmc -->
+    	<property name="gender" type="string">
+    		<column name="GENDER" length="200" />
+    	</property>
+    	
+    </class> 
+</hibernate-mapping>

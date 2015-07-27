@@ -1,0 +1,150 @@
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2015/6/29 13:34:05                           */
+/*==============================================================*/
+
+
+drop table if exists org_datarolerel;
+
+drop table if exists org_func;
+
+drop table if exists org_funcrolerel;
+
+drop table if exists org_org;
+
+drop table if exists org_role;
+
+drop table if exists org_user;
+
+drop table if exists org_userorgrel;
+
+drop table if exists org_userrolerel;
+
+/*==============================================================*/
+/* Table: org_datarolerel                                       */
+/*==============================================================*/
+create table org_datarolerel
+(
+   id                   varchar(200) not null,
+   orgid                varchar(200),
+   sort                 int,
+   roleid               varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_func                                              */
+/*==============================================================*/
+create table org_func
+(
+   id                   varchar(200) not null,
+   funcname             varchar(200),
+   iseffect             varchar(200),
+   type                 varchar(200),
+   sort                 int,
+   code                 varchar(200),
+   pid                  varchar(200),
+   funcwholename        varchar(200),
+   url                  varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_funcrolerel                                       */
+/*==============================================================*/
+create table org_funcrolerel
+(
+   id                   varchar(200) not null,
+   funcid               varchar(200),
+   org_id               varchar(200),
+   sort                 int,
+   roleid               varchar(200),
+   userid               varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_org                                               */
+/*==============================================================*/
+create table org_org
+(
+   id                   varchar(200) not null,
+   orgname              varchar(200),
+   shortname            varchar(200),
+   iseffect             varchar(200),
+   type                 varchar(200),
+   sort                 int,
+   code                 varchar(200),
+   pid                  varchar(200),
+   orgwholename         varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_role                                              */
+/*==============================================================*/
+create table org_role
+(
+   id                   varchar(200) not null,
+   rolename             varchar(200),
+   rolesign             varchar(200),
+   iseffect             varchar(200),
+   type                 varchar(200),
+   sort                 int,
+   orgid                varchar(200),
+   details              varchar(200),
+   rolegroup            varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_user                                              */
+/*==============================================================*/
+create table org_user
+(
+   id                   varchar(200) not null,
+   loginid              varchar(200) comment '111',
+   username             varchar(200),
+   iseffect             varchar(200),
+   password             varchar(200),
+   birthday             datetime,
+   mobile               varchar(200),
+   fjh                  varchar(200),
+   fphone               varchar(200),
+   sfzid                varchar(200),
+   pyjc                 varchar(200),
+   pyqc                 varchar(200),
+   workstate            varchar(200),
+   orgtype              varchar(200),
+   duty                 varchar(200),
+   dutydetails          varchar(200),
+   gender               varchar(200),
+   email                varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_userorgrel                                        */
+/*==============================================================*/
+create table org_userorgrel
+(
+   id                   varchar(200) not null,
+   sort                 int,
+   ismain               varchar(200),
+   userid               varchar(200),
+   orgid                varchar(200),
+   primary key (id)
+);
+
+/*==============================================================*/
+/* Table: org_userrolerel                                       */
+/*==============================================================*/
+create table org_userrolerel
+(
+   id                   varchar(200) not null,
+   sort                 int,
+   userid               varchar(200),
+   roleid               varchar(200),
+   primary key (id)
+);
+

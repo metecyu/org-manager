@@ -1,0 +1,121 @@
+/* 解决IE6对hover支持的问题 */
+body {
+	_behavior: url("../common/css/base_css/csshover3.htc");
+}
+
+.trueIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px 0px; WIDTH: 24px; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.falseIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -60px; WIDTH: 24px; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.addIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -120px; WIDTH: 24px; CURSOR: pointer; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.removeIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -180px; WIDTH: 24px; CURSOR: pointer; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.upIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -240px; WIDTH: 24px; CURSOR: pointer; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.downIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -300px; WIDTH: 24px; CURSOR: pointer; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.deleteIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -360px; WIDTH: 24px; CURSOR: pointer; LINE-HEIGHT: 24px; ZOOM: 1; HEIGHT: 24px
+}
+.warnIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -480px; WIDTH: 16px; LINE-HEIGHT: 29px; ZOOM: 1; HEIGHT: 29px
+}
+.loadingIcon {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_loading_icon.gif) no-repeat center 50%; WIDTH: 20px; LINE-HEIGHT: 20px; ZOOM: 1; HEIGHT: 20px
+}
+.dialogOverlay {
+	DISPLAY: none; 
+	Z-INDEX: 99; 
+	BACKGROUND: url(../../images/base_images/base_overlay_bg.png) #fff; 
+	POSITION: fixed; 	
+	FILTER: alpha(opacity = 30); 
+	ZOOM: 1; 
+	moz-opacity: 0.30; 
+	opacity: 0.30;
+	TOP: 0px; 
+	LEFT: 0px; 
+	WIDTH: 100%; 
+	HEIGHT: 100%; 
+}
+ HTML .dialogOverlay {
+	POSITION: absolute; TOP: 0px
+}
+.baseDialog {
+	PADDING-RIGHT: 5px; DISPLAY: none; PADDING-LEFT: 5px; Z-INDEX: 100; LEFT: 50%; PADDING-BOTTOM: 5px; OVERFLOW: hidden; PADDING-TOP: 5px; POSITION: fixed; TOP: 25%
+}
+ HTML .baseDialog {
+	POSITION: absolute; ; TOP: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(25 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px')
+}
+.baseDialog .dialogWrap {
+	Z-INDEX: -1; FILTER: alpha(opacity = 15); LEFT: 0px; WIDTH: 1000px; POSITION: absolute; TOP: 0px; HEIGHT: 1000px; BACKGROUND-COLOR: #000000; moz-opacity: 0.15; opacity: 0.15
+}
+.baseDialog .dialogMain {
+	BORDER-RIGHT: #779cb0 1px solid; BORDER-TOP: #779cb0 1px solid; BACKGROUND: url(../../images/base_images/base_x_bg.gif) #ffffff repeat-x 0px -120px; BORDER-LEFT: #779cb0 1px solid; BORDER-BOTTOM: #779cb0 1px solid
+}
+.baseDialog .dialogTitle {
+	CLEAR: both; PADDING-LEFT: 10px; FONT-WEIGHT: bold; BACKGROUND: url(../../images/base_images/base_x_bg.gif) repeat-x 0px 0px; CURSOR: move; COLOR: #666666; LINE-HEIGHT: 40px; HEIGHT: 40px
+}
+.baseDialog .dialogClose {
+	RIGHT: 10px; BACKGROUND: url(../../images/base_images/base_button.gif) no-repeat -180px 0px; WIDTH: 25px; CURSOR: pointer; POSITION: absolute; TOP: 5px; HEIGHT: 19px
+}
+.baseDialog .dialogClose:hover {
+	BACKGROUND-POSITION: -240px 0px
+}
+.baseDialog .dialogContent {
+	FONT-SIZE: 12px;
+	CLEAR: both; 
+	MARGIN: 40px 50px; 
+	LINE-HEIGHT: 30px
+}
+.baseDialog .dialogwarnIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -540px
+}
+.baseDialog .dialogsuccessIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -740px
+}
+.baseDialog .dialogerrorIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -940px
+}
+.baseDialog .dialogButtonArea {
+	CLEAR: both; BACKGROUND: url(../../images/base_images/base_x_bg.gif) repeat-x 0px -60px; PADDING-TOP: 6px; HEIGHT: 34px; TEXT-ALIGN: center
+}
+.baseDialog .dialogButtonArea INPUT {
+	MARGIN: 0px 10px
+}
+.baseDialog .dialogButtonArea .formButton {
+	FONT-SIZE: 12px; BACKGROUND: url(../../images/base_images/base_button.gif) no-repeat 0px 0px; WIDTH: 70px; CURSOR: pointer; COLOR: #646464; BORDER-TOP-STYLE: none; LINE-HEIGHT: 28px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; HEIGHT: 28px; TEXT-ALIGN: center; BORDER-BOTTOM-STYLE: none; outline: none
+}
+.baseDialog .dialogButtonArea .formButton:hover {
+	BACKGROUND: url(../../images/base_images/base_button.gif) no-repeat -90px 0px; COLOR: #000000
+}
+.baseMessage {
+	BORDER-RIGHT: #ffaa71 2px solid; PADDING-RIGHT: 15px; BORDER-TOP: #ffaa71 2px solid; DISPLAY: none; PADDING-LEFT: 10px; Z-INDEX: 1000; LEFT: 50%; PADDING-BOTTOM: 5px; BORDER-LEFT: #ffaa71 2px solid; COLOR: #000000; PADDING-TOP: 5px; BORDER-BOTTOM: #ffaa71 2px solid; POSITION: fixed; TOP: 35%; BACKGROUND-COLOR: #fff5ee
+}
+ HTML .baseMessage {
+	POSITION: absolute; ; TOP: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(35 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px')
+}
+.baseMessage .messagewarnIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -540px
+}
+.baseMessage .messagesuccessIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -740px
+}
+.baseMessage .messageerrorIcon {
+	PADDING-LEFT: 30px; BACKGROUND: url(../../images/base_images/base_icon.gif) no-repeat 0px -940px
+}
+.baseMessage .messageContent {
+	LINE-HEIGHT: 30px
+}
+.warnInfo {
+	BORDER-RIGHT: #ffca80 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ffca80 1px solid; PADDING-LEFT: 20px; BACKGROUND: url(../../images/base_images/base_icon.gif) #fffee2 no-repeat 0px -420px; PADDING-BOTTOM: 5px; BORDER-LEFT: #ffca80 1px solid; LINE-HEIGHT: 30px; PADDING-TOP: 5px; BORDER-BOTTOM: #ffca80 1px solid
+}
+.loadingBar {
+	DISPLAY: inline; BACKGROUND: url(../../images/base_images/base_loading_bar.gif) no-repeat center 50%; WIDTH: 208px; LINE-HEIGHT: 20px; ZOOM: 1; HEIGHT: 20px
+}

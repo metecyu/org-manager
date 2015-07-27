@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.articleBody {
+	width: 860px;
+	margin: 10px auto;
+	padding: 15px;
+	border: 1px solid #e1e1e1;
+}
+
+.titleBar{
+	margin:5px 0 1px 0;
+	padding: 1px 0 1px 25px;
+	background: url(../../images/admin/list_x_bg.gif) 0px 0px repeat-x;
+}
+
+.titleMessage{
+	margin:0;
+	padding: 0px 10px 0px 35px;;
+	font-size: 14px;
+	font-weight: bold;
+	color:#000;
+	height: 25px;
+	line-height: 25px;
+}
+
+.articleTitle{
+	width:100%;
+	text-align:center;
+	font-size:18px;
+	font-weight:bolder;
+}
+
+.line{
+	width:100%;
+	height:20px;
+	border-bottom: 1px solid #e1e1e1;
+}	
+
+.content{
+	width:100%;
+	margin:10px 0 10px 0;	
+}	
+	
+.articleBottom{
+	height:50px;
+}

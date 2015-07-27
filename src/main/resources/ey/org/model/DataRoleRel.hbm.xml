@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-8-28 10:39:03 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="ey.org.model.DataRoleRel" table="ORG_DATAROLEREL">
+        <id name="id" type="string">
+            <column name="ID" length="200" />
+            <generator class="uuid.hex"></generator>
+        </id>
+        <property name="orgId" type="string">
+            <column name="ORGID" length="200" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="SORT" precision="22" scale="0" />
+        </property>
+        <property name="roleid" type="string">
+            <column name="ROLEID" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

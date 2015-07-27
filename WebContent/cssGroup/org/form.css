@@ -1,0 +1,13 @@
+@charset "utf-8";
+	.input table.inputTable th{
+		background-color:#ffffff;
+	}
+	.input table.inputTable tr:hover{
+		background-color: #ffffd4;
+	}
+	.input table.inputTable tr:hover th {
+		background-color: #ffffd4;
+	} 
+	.body {
+		width:500px;
+	} 

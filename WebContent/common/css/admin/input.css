@@ -1,0 +1,353 @@
+@charset "utf-8";
+
+.body {
+	width: 860px;
+	margin: 0 auto;
+}
+
+.titleBar{
+	margin:5px 0 5px 0;
+	padding: 1px 0 1px 25px;
+	height: 25px;
+	line-height: 25px;
+	background: url(../../images/admin/list_x_bg.gif) 0px 0px repeat-x;
+}
+
+.titleMessage{
+	margin:5px 0 5px 0;
+	padding: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#000;
+}
+
+
+
+.littleBar{
+	margin:10px 0 0 0;
+	padding: 1px 0 1px 25px;
+	height: 25px;
+	line-height: 25px;
+	background-color: #E1E1E1;
+}
+
+.littleMessage{
+	margin:5px 0 5px 0;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: bold;
+	color:#000;
+}
+
+.listMessage{
+	margin:5px 0 5px 0;
+	padding: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#000;
+	width:300px;
+}
+
+.listMessage span{
+	display:block;
+}	
+	
+.listMessage span label{
+	margin:5px 10px 5px 5px;;
+}
+
+.left{
+	float:left;
+}	
+
+.input{
+	font-size: 12px;
+}	
+
+.leftInput{
+	width: 480px;	
+}	
+
+.treeSel .tree{
+	height: 400px;
+	width:300px;
+	font-size: 12px;
+	margin-left:5px;
+}
+
+.input .listTable{
+	width:100%;
+	text-align: center;
+	font-size: 12px;
+	margin:5px 0 5px 0;
+	border: 1px solid #CCC;
+}
+
+.input .listTable .fieldTitle{
+	background: url(../../images/admin/field_bg.gif) repeat-x;
+}
+
+.input .listTable td{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E1E1E1;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E1E1E1;
+	padding: 5px 0px 5px 0px;
+	list-style-type:none;
+}
+
+.input table.inputTable {
+	width: 100%;
+}
+
+.input table.inputTable th {
+	width:100px;
+	font-weight:normal;
+	line-height: 30px;
+	padding-right: 10px;
+	text-align: right;
+	color: #333333;
+	border-bottom: 1px solid #e1e1e1;
+	background-color: #f8f8f8;
+}
+
+.input table.inputTable tr:hover{
+	background-color: #eeeeee;
+}
+.input table.inputTable tr:hover th {
+	background-color: #eeeeee;
+}
+
+.input table.inputTable td {
+	line-height: 25px;
+	padding: 5px 0px 5px 10px;
+	color: #666666;
+	border-bottom: 1px solid #e1e1e1;
+	list-style-type:none;
+}
+
+input.inputText{
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	width:150px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+input.inputText:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+input.inputText:focus {
+	background-color: #fff8ef;
+}
+
+textarea.inputTextArea{
+	font-size: 12px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+	display:inline-block;
+}
+
+textarea.inputTextArea:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+textarea.inputText:focus {
+	background-color: #fff8ef;
+}
+
+.inputSelect{
+	height: 20px;
+	font-size: 12px;
+	width:155px;
+}
+
+.input .formButtonArea{
+	padding: 10px;
+	text-align:center;
+}
+
+.inputInfo{
+	font-size: 12px;
+	display:block;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+.requireField{
+	color: #EA5200;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+
+
+input.error { border: 1px solid red; }
+label.error {
+	background:url("../../validate/images/unchecked.gif") no-repeat 0px 0px;
+	background-position:left center;
+	
+	font-size: 12px;
+	font-weight: bold;
+	color: #EA5200;
+	line-height: 12px;
+	
+	padding: 4px;
+	padding: 6px\9;
+	*padding: 6px;
+	_padding: 6px;
+	padding-left: 16px;
+	margin-left: 2px;
+	zoom: 1;
+	
+	border: 1px solid #ffca88;
+	background-color: #fffeee;
+	
+	
+}
+
+.buttonArea {
+	width: 860px;
+	padding:15px 0 15px 0;
+	text-align:center
+}
+
+.buttonAreaRight {
+	width: 840px;
+	padding:15px 0 15px 0;
+	text-align:right
+}
+
+.input table.inputTableMore th {
+	width:80px;
+	font-weight:normal;
+	line-height: 30px;
+	padding-right: 10px;
+	text-align: right;
+	color: #333333;
+	border-bottom: 1px solid #e1e1e1;
+	background-color: #f8f8f8;
+}
+
+.input table.inputTableMore td {
+	width:186px;
+	line-height: 25px;
+	padding: 5px 0px 5px 10px;
+	color: #666666;
+	border-bottom: 1px solid #e1e1e1;
+	list-style:none;
+}
+
+
+UL.tabs {
+	background: url(../../images/admin/input_x_bg.gif) 0px -30px repeat-x;
+	height: 29px;
+	padding-left: 161px;
+}
+UL.tabs LI {
+	FLOAT: left;
+}
+UL.tabs LI INPUT {
+	background: url(../../images/admin/input_bg.gif) -100px 0px no-repeat;
+	width: 100px;
+	height: 29px;
+	line-height: 29px;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	border: none;
+}
+UL.tabs LI INPUT:hover {
+	COLOR: #ff9b1f
+}
+UL.tabs LI.current INPUT {
+	background: url(../../images/admin/input_bg.gif) 0px 0px no-repeat;
+	COLOR: #000000
+}
+
+
+input.inputTextM{
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	width:25px;
+	_width:24px;
+	text-align:center;
+}
+
+.labelTextM{
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	width:25px;
+	text-align:center;
+	display:inline-block;
+}
+
+.inputBorderL{
+	border-top: 1px solid #999999;
+	border-right: 0px;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+.inputBorderM{
+	border-top: 1px solid #999999;
+	border-right: 0px;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 0px;
+}
+.inputBorderR{
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 0px;
+}
+
+input.inputTextH{
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	width:115px;
+	text-align:center;
+}	
+.labelTextH{
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	width:35px;
+	text-align:center;
+	display:inline-block;
+}
+
+.tree li{
+	padding:7px 0 0 0;
+}
+
+.addSignButton{
+	background: url(../../images/admin/operation.gif) 1px -6px  no-repeat;
+	height: 25px;
+	width: 38px;
+	
+}
+
+.deleteSignButton{
+	background: url(../../images/admin/operation.gif) -58px -6px  no-repeat;
+	height: 25px;
+	width: 38px;
+	
+}
+
+
+

@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+.body{
+	PADDING: 0 5px 0 5px;
+}	
+
+.list .titleBar{
+	margin:5px 0 5px 0;
+	padding: 1px 0 1px 25px;
+	height: 25px;
+	line-height: 25px;
+	background: url(../../images/admin/list_x_bg.gif) 0px 0px repeat-x;
+}
+
+.titleMessage{
+	margin:5px 0 5px 0;
+	padding: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#000;
+}
+
+.pageMessage{
+	font-size: 12px;
+	color:#000;
+}
+
+
+.queryBar{
+	padding: 3px;
+	font-size: 12px;
+	color:#000;
+}
+
+.queryBar span{
+	margin:5px 0 5px 5px;
+}
+.queryBar span .queryTitle{
+	text-align:right;
+	display:inline-block;
+	width:60px;
+}
+.queryBar span .queryTitleLong{
+	text-align:right;
+	display:inline-block;
+	width:80px;
+}
+
+input.queryButton {
+	width: 75px;
+	height: 29px;
+	line-height: 29px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	font-size: 12px;
+	border: none;
+	background: url(../../images/admin/list_bg.gif) 0px -30px  no-repeat;
+}
+
+input.queryButton:hover {
+	color: #ff6600;
+	background: url(../../images/admin/list_bg.gif) 0px -60px repeat-x;
+}
+
+.scrollDiv{
+	width:100%;
+	overflow-x:auto;
+	_padding-bottom:8px;
+}
+.listTableDiv{
+	width:100%;
+	
+}
+
+.listTable{
+	width:100%;	
+	text-align: center;
+	font-size: 12px;
+	margin:5px 0 5px 0;
+	border: 1px solid #CCC;
+}
+
+.listTableExpand{
+	table-layout:fixed;
+}
+
+.listTableExpand td{
+	height:30px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #E1E1E1;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E1E1E1;
+	color: #666;
+}
+
+.listTable .fieldTitle{
+	background: url(../../images/admin/field_bg.gif) repeat-x;
+}
+
+.listTable tr:hover {
+	background-color: #ffffd4
+}
+
+.listTable td{
+	height:30px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #E1E1E1;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #E1E1E1;
+	color: #666;
+	text-align:left;
+	padding-left:10px;
+}
+
+.listTable th{
+		text-align:left;
+	padding-left:10px;
+}
+
+.listTable td a {
+	color: #336699;
+}
+
+.listTable td a:hover {
+	color: #ff6600;
+}
+
+.noRecord{
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;	
+	padding: 20px 0 20px 0;
+}	
+
+.check{
+	width:50px;
+}
+
+.inputText{
+	height: 18px;
+	line-height: 18px;
+	font-size: 14px;
+	width:200px;
+}
+
+.inputTextDate{
+	height: 18px;
+	line-height: 18px;
+	font-size: 14px;
+	width:152px;
+}
+
+.inputSelect{
+	height: 20px;
+	font-size: 12px;
+	width:155px;
+}
+
+.chengedPlan{
+	background-color:#FFEFEF;
+}
+
+UL.tabs {
+	background: url(../../images/admin/input_x_bg.gif) 0px -30px repeat-x;
+	height: 29px;
+	padding-left: 161px;
+}
+UL.tabs LI {
+	FLOAT: left;
+}
+UL.tabs LI INPUT {
+	background: url(../../images/admin/input_bg.gif) -100px 0px no-repeat;
+	width: 100px;
+	height: 29px;
+	line-height: 29px;
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	COLOR: #666;
+}
+UL.tabs LI INPUT:hover {
+	COLOR: #ff9b1f
+}
+UL.tabs LI.current INPUT {
+	background: url(../../images/admin/input_bg.gif) 0px 0px no-repeat;
+	COLOR: #000;
+}
+UL.queryTab{
+	padding-left: 150px;	
+}
+
+.trChecked{
+	background-color:#DAFFD7;
+}
+
+input.error { border: 1px solid red; }
+label.error {
+	background:url("../../validate/images/unchecked.gif") no-repeat 0px 0px;
+	background-position:left center;
+	
+	font-size: 12px;
+	font-weight: bold;
+	color: #EA5200;
+	line-height: 12px;
+	
+	padding: 4px;
+	padding: 6px\9;
+	*padding: 6px;
+	_padding: 6px;
+	padding-left: 16px;
+	margin-left: 2px;
+	zoom: 1;
+	
+	border: 1px solid #ffca88;
+	background-color: #fffeee;
+}
+
+.list table.listTable th .sort{
+	cursor: pointer;	
+}
+
+.list table.listTable th .descSort {
+	width: 29px;
+	height: 29px;
+	line-height: 29px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../../images/admin/list_bg.gif) -60px 0px no-repeat;
+}
+
+.list table.listTable th .ascSort {
+	width: 29px;
+	height: 29px;
+	line-height: 29px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../../images/admin/list_bg.gif) -90px 0px no-repeat;
+}

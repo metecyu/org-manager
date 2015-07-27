@@ -1,0 +1,356 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>作业情况查询</title>
+<link href="../common/css/admin/listquery.css" rel="stylesheet" type="text/css">
+<link href="../common/css/base_css/base.css" rel="stylesheet" type="text/css">
+<link href="../common/css/base_css/dialog.css" rel="stylesheet" type="text/css">
+
+<link href="../common/css/admin/header.css?v=2" rel="stylesheet" type="text/css">
+<!-- --><link href="../common/css/admin/menu.css" rel="stylesheet" type="text/css"> 
+<link href="../common/css/admin/bar.css?v=2" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../common/js/base_js/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.metadata.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.methods.js"></script>
+<script type="text/javascript" src="../common/validate/jquery.validate.cn.js"></script>
+<script type="text/javascript" src="../common/js/base_js/jquery.tools.js"></script>
+<link href="../common/js/wbox/wbox/wbox.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../common/js/wbox/wbox-min.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="../common/js/base_js/belatedPNG.js"></script>
+<![endif]-->
+<script type="text/javascript" src="../common/js/base_js/base.js"></script>
+<script type="text/javascript" src="../common/js/base_js/dialog.js"></script><script type="text/javascript" src="../common/datepicker/WdatePicker.js"></script><link href="http://localhost:8080../common/datepicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../common/js/base_js/list.js"></script>
+
+<script type="text/javascript"> 
+$().ready(function() {
+	$(".main").click( function() {
+		
+		var mainFrameset = $("#menuContent");
+		var listTable = $(".listTable");
+		var body = $(".body");
+		var queryBar = $(".queryBar");
+		var listTableDiv = $(".listTableDiv");
+		
+		
+		//alert("  body:"+ body.width() +"  listTable:"+listTable.width()+"  queryBar:"+queryBar.width()+"  listTableDiv:"+listTableDiv.width()) 
+		if(!isHideMenu()) {
+			mainFrameset.hide();
+			$(".handle").css("marginLeft",5);
+			$(".main").removeClass("leftArrow");
+			$(".main").addClass("rightArrow");
+		} else {
+			mainFrameset.show(); 
+			$(".handle").css("marginLeft",160);
+			$(".main").removeClass("rightArrow");
+			$(".main").addClass("leftArrow");
+		}   
+	})
+})
+
+function isHideMenu(){
+	return $("#menuContent").is(":hidden")
+}
+</script>
+</head>
+<body class="list header menu">
+<!-- top 区域  -->
+<div class="headbody">
+	<div class="headerLogo"></div>
+	<div class="headerTop">
+		<div class="headerLink">
+			<span class="welcome">
+				<strong>admin</strong>&nbsp;您好!&nbsp;
+			</span>
+			<a class="mForm" onclick="return false;" href="admin!middle.do" target="middleFrame">后台首页</a>|
+	    	<a href="http://www.wanchenginfo.com" target="_blank">技术支持22</a>|
+
+	        <a href="http://www.wanchenginfo.com" target="_blank">关于我们</a>|
+	        <a href="http://www.wanchenginfo.com" target="_blank">联系我们</a>
+		</div>
+	</div>
+	<div class="headerBottom">
+		<div class="headerMenu">
+			<div class="menuLeft"></div>
+			<ul>
+				<li><a id="first" href="admin!menu.do?id=408948963086eaab0130872966bd0002" target="menuFrame">生产运营</a></li>
+				<li><a href="admin!menu.do?id=408948963086eaab013087ae1ef00005" target="menuFrame">实时监控</a></li>
+				<li><a href="admin!menu.do?id=408948963086eaab013087acec9a0004" target="menuFrame">综合查询</a></li>
+				
+	            <li ><a class="mForm" onclick="return false;" href="admin!middle.do" target="middleFrame" hidefocus="true">综合查d</a></li>
+	        </ul>
+	        <div class="menuRight"></div>
+		</div>
+		<div class="userInfo">
+			<a class="mForm" onclick="return false;" href="../sys/user!self.do" target="middleFrame">
+				<span class="profileIcon">&nbsp;</span>个人资料
+			</a>
+			<a href="../admin/logout" target="_top">
+				<span class="logoutIcon">&nbsp;</span>退出&nbsp;
+			</a>
+		</div>
+	</div>
+</div>
+<!-- end top  -->
+<!-- left menu -->
+<div id='menuContent' class="menuContent " >
+		<dl>
+			</dl>
+			<dl>
+				<dt>
+					<span>生产管理</span>
+				</dt>
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../task_plan!list.do" target="middleFrame" >作业计划</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../task!list.do" target="middleFrame" >作业情况登记</a>
+				</dd>	
+			</dl>
+			<dl>
+				<dt>
+					<span>设备管理日报表</span>
+				</dt>
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listEquipment.do" target="middleFrame" >设备故障</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listPlan.do" target="middleFrame" >计划工作</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!list.do" target="middleFrame" >完成情况</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!listRemark.do" target="middleFrame" >备注</a>
+				</dd>	
+				<dd>
+					<a class="mForm" onclick="return false;" href="..../new_schedule!add.do" target="middleFrame" >导入</a>
+				</dd>	
+		</dl>
+	</div>
+<!-- end left menu --> 
+<div class="middle" style ="float:left;width:6px;height:100%;">
+	<div class="main leftArrow"  ></div>
+</div>
+ 
+ 
+<!-- handle -->
+<div class='handle'>
+<div class="titleBar" >
+	<span class="titleMessage">作业情况查询</span>
+		<span class="pageMessage">
+			总记录数: 313 
+			&nbsp;&nbsp;
+			(第1页/共32页)
+		</span>
+</div>
+<div class="body" >
+	<form id="listForm" action="work_query!list.do" method="post">
+	
+		<div class="queryBar" >
+			<span>
+				<label class="queryTitle">减载航次:</label>
+				<input type="hidden" name="search.strProperty[0]" value="number">
+				<input type="text" name="search.strKeyword[0]" class="inputText">
+			</span>
+			<span>
+				<label class="queryTitle">减载货船:</label>
+				<input type="hidden" name="search.strProperty[1]" value="name">
+				<input type="text" name="search.strKeyword[1]" class="inputText">
+			</span>
+			<input type="button" id="searchButton" class="searchButton queryButton" value="查询">
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="hidden" name="search.intProperty[0]" value="billStatus">
+			<input type="hidden" name="search.intFrom[0]" value="0">
+			<input type="hidden" name="search.intTo[0]" value="1">
+			<label>每页显示:</label>
+			<select name="pager.pageSize" id="pageSize">
+				<option value="10" selected="selected">
+					10
+				</option>
+				<option value="20">
+					20
+				</option>
+				<option value="50">
+					50
+				</option>
+				<option value="100">
+					100
+				</option>
+			</select>
+		</div>
+		<div class="queryBar">
+			<span>
+				<label class="queryTitle">开始日期:</label>
+				<input type="hidden" name="search.dateProperty[0]" value="sdate">
+				<input type="text" name="search.dateFrom[0]" class="inputText Wdate" onfocus="WdatePicker({readOnly:true})">
+				<input type="hidden" name="search.dateTo[0]" value="">
+			</span>
+			<span>
+				<label class="queryTitle">结束日期:</label>
+				<input type="hidden" name="search.dateProperty[1]" value="leaveDate">
+				<input type="text" name="search.dateTo[1]" class="inputText Wdate" onfocus="WdatePicker({readOnly:true})">
+				<input type="hidden" name="search.dateFrom[1]" value="">
+			</span>
+		</div>
+		<div class="queryBar">
+			<span>
+				<label class="queryTitle">作业状态:</label>
+				<input type="hidden" name="search.intProperty[1]" value="status">
+				<input type="hidden" name="search.intFrom[1]" value="">
+				<label><input type="radio" id="RadioStatus_a" name="search.intTo[1]" value="" checked="">全部</label>
+			    &nbsp;
+			    <label><input type="radio" id="RadioStatus_0" name="search.intTo[1]" value="0">计划</label>
+			    &nbsp;
+			    <label class="green"><input type="radio" id="RadioStatus_1" name="search.intTo[1]" value="1">作业中</label>
+			    &nbsp;
+			    <label class="red"><input type="radio" id="RadioStatus_2" name="search.intTo[1]" value="2">已完工</label>
+			    &nbsp;
+			</span>
+		</div>
+		<div class='listTableDiv' >
+			<table class="listTable" >
+				<tbody><tr class="fieldTitle">
+					<th width="120px">
+						<span class="sort" name="number">减载航次</span>
+					</th>
+					<th>
+						<span class="sort" name="name">减载货船</span>
+					</th>
+					<th width="100px">
+						<span class="sort" name="planLading">计划减载量</span>
+					</th>
+					<th width="140px">
+						<span class="sort" name="sdate">开始时间</span>
+					</th>
+					<th width="140px">
+						<span class="sort" name="leaveDate">结束时间(离泊)</span>
+					</th>
+					<th width="100px">
+						<span class="sort" name="status">状态</span>
+					</th>
+					<th width="80px">
+						操作
+					</th>
+				</tr>
+					<tr>
+						<td>
+							14061
+						</td>
+						<td>
+							泰山（TAI SHAN）
+						</td>
+						<td>
+							79900
+						</td>
+						<td>
+							2014-06-25 08:55:19
+						</td>
+						<td>
+							
+						</td>
+						<td>
+								<span class="green">作业中</span>
+						</td>
+						<td>
+							<a href="work_query!watch.do?id=402887714664ac0b0146cc73aaec0052" title="查看">[查看]</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							14060
+						</td>
+						<td>
+							雷霆 FURIOUS
+						</td>
+						<td>
+							68300
+						</td>
+						<td>
+							2014-06-23 18:30:44
+						</td>
+						<td>
+							2014-06-25 07:00:58
+						</td>
+						<td>
+								<span class="red">已完工</span>	
+						</td>
+						<td>
+							<a href="work_query!watch.do?id=402887714664ac0b0146c186385b0049" title="查看">[查看]</a>
+						</td>
+					</tr>
+					
+			</tbody></table>
+		</div><!-- end listTableDiv -->
+
+<style type="text/css">
+#pageDiv {
+	float: right;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+input.pagerButton {
+	height: 24px;
+	line-height: 24px;
+	font-size: 12px;
+	margin: 0px 5px 0px 0px;
+	background: #FAFAFA;
+	border: 1px solid #cccccc;
+}
+
+input.pagerButton:hover {
+	background: #EEE;
+	border: 1px solid #003f7e;
+}
+</style>
+<script type="text/javascript">
+$().ready( function() {
+	$("#firstPage").click(function(){
+		$.gotoPage(1);
+	});
+	$("#previousPage").click(function(){
+		$.gotoPage(0);
+	});
+	$("#nextPage").click(function(){
+		$.gotoPage(2);
+	});
+	$("#lastPage").click(function(){
+		$.gotoPage(32);
+	});
+	
+	$("#jumpPage").click(function(){
+		var num=$("#pageTo").val();
+		if(isNaN(num)||num<=0||num>32){
+			$.dialog({type: "error", title:"请注意", content: "输入的页数错误!", ok: "确定", modal: true});
+			return false;
+		}	
+		$.gotoPage(num);
+	});
+})
+</script>
+
+<div id="pageDiv">
+	<input id="firstPage" class="pagerButton" type="button" value="首页" hidefocus="true" disabled="disabled">
+	<input id="previousPage" class="pagerButton" type="button" value="上一页" hidefocus="true" disabled="disabled">
+	
+	<input id="nextPage" class="pagerButton" type="button" value="下一页" hidefocus="true">
+	<input id="lastPage" class="pagerButton" type="button" value="尾页" hidefocus="true">
+	&nbsp;&nbsp;
+	转到第&nbsp;<input id="pageTo" name="pageTo" type="text" maxlength="3" style="width:50px">&nbsp;页
+	<input id="jumpPage" class="pagerButton" type="button" value="跳转" hidefocus="true">
+</div>
+
+<input type="hidden" name="pager.pageNumber" id="pageNumber" value="1">
+
+
+	<input type="hidden" name="pager.orderBy" id="orderBy" value="createDate">
+	<input type="hidden" name="pager.orderType" id="order" value="desc">
+	</form>
+</div>	<!-- end div body -->
+</div> <!-- end handle  -->
+<div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px;"><iframe style="width: 186px; height: 203px;" src="http://localhost:8080../common/datepicker/My97DatePicker.htm" frameborder="0" border="0" scrolling="no"></iframe></div></body></html>

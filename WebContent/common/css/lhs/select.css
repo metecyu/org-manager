@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+
+.sbody{
+	width:100%;
+	height:100%;
+}	
+.left{
+	float:left;
+}	
+.treeSel{
+	overflow:auto;
+	height:300px;
+}
+.treeSel .tree{
+	font-size: 12px;
+	margin-left:5px;
+}
+.buttonArea {
+	width: 100%;
+	padding:15px 0 15px 0;
+	text-align:center;
+	border-top:1px solid #CCC;
+}
+.tree li{
+	padding:7px 0 0 0;
+}

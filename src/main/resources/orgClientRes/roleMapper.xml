@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="ey.orgclient.serviceSqlImp.dao.RoleMapper">  
+   
+	
+    <select id="findById" parameterType="HashMap" resultType="Role">  
+        select  
+       		 role.*,org.orgwholename  from org_role role,Org_Org org where 
+       			role.id=#{roleid}  
+        		and role.orgid=org.id 
+    </select> 
+    
+    
+	<select id="findByCode" parameterType="HashMap" resultType="Role">  
+		select  
+       		 role.*,org.orgwholename  from org_role role,Org_Org org where 
+       			role.rolesign=#{code}  
+        		and role.orgid=org.id 
+        		and role.iseffect='y'
+    </select>  
+    
+    
+    <resultMap id="getResult1" type="Role"> 
+	    <result property="id" column="rel.roleid" />
+	    <result property="rolename" column="role.rolename" />  
+	    <result property="orgwholename" column="org.orgwholename" />
+	</resultMap>
+    <select id="findByUserid" parameterType="HashMap" resultMap="getResult1">  
+        select role.*, org.orgwholename
+         from Org_UserRoleRel rel,Org_Role role,Org_User user2,Org_Org org where 
+         role.orgid=org.id
+         and role.id=rel.roleid
+         and user2.id=rel.userid
+         and role.iseffect='y' and org.iseffect='y'  and user2.iseffect='y'
+         and user2.id=#{userid}
+         order by org.orgwholename
+    </select>   
+    
+</mapper>  

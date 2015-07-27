@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>  
+
+	<url doUrl="train/showIndex.do" details=""/>
+    <url doUrl="train/showStep1List.do" details=""/>
+    <!-- 飞行训练 -->
+    <url doUrl="train/showStep2List.do" details=""/>
+    <url doUrl="train/showStep3List.do" details=""/>    
+    <url doUrl="train/showStep4List.do" details=""/>
+    <url doUrl="train/showStep5List.do" details=""/>
+    <url doUrl="train/showStep6List.do" details=""/>
+    <url doUrl="train/showStep7List.do" details=""/>
+    <url doUrl="train/showStep8List.do" details=""/>
+    <url doUrl="train/showStep9List.do" details=""/>
+    <url doUrl="train/showStep10List.do" details=""/>
+    <url doUrl="train/showStep11List.do" details=""/>
+    <url doUrl="train/showStep12List.do" details=""/>
+    <url doUrl="train/showStep13List.do" details=""/>
+    
+    <url doUrl="train/showMyTrainList.do" details=""/>
+    <url doUrl="train/showUnfinishedTrainList.do" details=""/>
+    <url doUrl="train/showFinishedTrainList.do" details=""/>
+    
+	<!-- 飞行任务 -->
+    <url doUrl="mission/showStep1List.do" details=""/>
+    <url doUrl="mission/showStep2List.do" details=""/>
+    <url doUrl="mission/showStep3List.do" details=""/>
+    <url doUrl="mission/showStep4List.do" details=""/>
+    <url doUrl="mission/showStep5List.do" details=""/>
+    <url doUrl="mission/showStep6List.do" details=""/>
+    <url doUrl="mission/showStep7List.do" details=""/>
+    <url doUrl="mission/showStep8List.do" details=""/>
+    <url doUrl="mission/showStep9List.do" details=""/>
+    <url doUrl="mission/showStep10List.do" details=""/>
+    <url doUrl="mission/showStep11List.do" details=""/>
+    <url doUrl="mission/showStep12List.do" details=""/>
+    <url doUrl="mission/showStep13List.do" details=""/>
+    
+    <url doUrl="mission/showFinishedMissionList.do" details=""/>
+ 	<!-- 统计汇总 -->
+  	<url doUrl="diary/showAllDiaryList.do" details=""/>
+  	<url doUrl="statistic/openStatisticForm.do" details=""/>
+  	<!-- 飞行安全基础信息 -->
+	<url doUrl="airplane/getAllAirplane.do" details=""/>
+  	<url doUrl="waypoint/showAllWaypointList.do" details=""/>
+  	<url doUrl="person/showAllWorkerList.do" details=""/>
+  	<!-- 系统管理 -->
+  	<url doUrl="codes/getAllCCate.do" details=""/>
+  	<url doUrl="codes/getAllCodes.do" details=""/>
+    
+</configuration>

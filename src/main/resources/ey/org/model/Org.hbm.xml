@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-8-28 10:39:03 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="ey.org.model.Org" table="ORG_ORG">
+        <id name="id" type="string">
+            <column name="ID" length="200" />
+            <generator class="assigned"></generator>
+        </id>
+        <property name="orgname" type="string">
+            <column name="ORGNAME" length="200" />
+        </property>
+        <property name="shortname" type="string">
+            <column name="SHORTNAME" length="200" />
+        </property>
+        <property name="iseffect" type="string">
+            <column name="ISEFFECT" length="200" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="200" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="SORT" precision="22" scale="0" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="200" />
+        </property>
+        <property name="pid" type="string">
+            <column name="PID" length="200" />
+        </property>
+        <property name="orgwholename" type="string">
+            <column name="ORGWHOLENAME" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

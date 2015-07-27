@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC   
+    "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+	<mapper namespace="ey.orgclient.serviceSqlImp.dao.FuncMapper">  
+    <!-- findById必须和接口中的方法名一样  返回一个User  就是刚才的别名  如果不弄别名要连类路径一起写 麻烦-->  
+    <select id="findById" parameterType="HashMap" resultType="Func">  
+        select  
+        * from org_func t where t.id=#{funcid}  
+    </select> 
+    
+	<select id="findByCode" parameterType="HashMap" resultType="Func">  
+        select  
+        * from org_func t where t.code=#{code} and t.iseffect='y' 
+    </select>  
+    
+    
+    
+    <!-- 多表联合查询  -->
+    <resultMap id="getBResult" type="Func">  
+		<!-- 	    <result property="id" column="rel.roleid" />
+	    <result property="rolename" column="role.rolename" />   -->
+	</resultMap>
+    <select id="findByRoleId" parameterType="HashMap" resultType="Func">  
+        select func.* 
+  			from org_Func func,org_FuncRoleRel rel,org_Role role where 
+         role.id=rel.roleid       
+         and func.id=rel.funcid
+         and role.iseffect='y' and func.iseffect='y'
+         and role.id=#{roleid}
+		 and (func.type=#{type} or func.type='3') 
+         order by func.pid, func.sort
+    </select>   
+    
+</mapper>  
