@@ -11,8 +11,10 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.crypto.hash.Md5Hash;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
@@ -43,7 +45,7 @@ public class UserRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-    	System.out.println(" doGetAuthorizationInfo 1 ...  ");
+    	System.out.println(" 加载用户 的角色 许可信息  ...  ");
         String loginid = (String)principals.getPrimaryPrincipal();
         
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
@@ -71,6 +73,9 @@ public class UserRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
     	System.out.println(" doGetAuthenticationInfo 2 ...  ");
         String username = (String)token.getPrincipal();
+        UsernamePasswordToken tokenPass= (UsernamePasswordToken)token;
+        String pwd = tokenPass.getPassword()+"";
+        String md5 = new Md5Hash(pwd, "").toString();
         OrgUser user = userH.findByLonginId(username);
 
         if(user == null) {

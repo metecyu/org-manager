@@ -8,11 +8,11 @@
        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <!-- 缓存管理器 
+    <!-- 缓存管理器 -->
     <bean id="cacheManager" class="ey.org.shiro.SpringCacheManagerWrapper">
         <property name="cacheManager" ref="springCacheManager"/>
     </bean>
-	-->
+	
     <!-- 凭证匹配器
     <bean id="credentialsMatcher" class="ey.org.shiro.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager"/>
@@ -23,12 +23,13 @@
  -->
     <!-- Realm实现 -->
     <bean id="userRealm" class="ey.org.shiro.UserRealm">
-        <!-- <property name="credentialsMatcher" ref="credentialsMatcher"/> -->
+		<!--<property name="credentialsMatcher" ref="credentialsMatcher"/> -->
         <property name="cachingEnabled" value="false"/>
-        <!--<property name="authenticationCachingEnabled" value="true"/>-->
-        <!--<property name="authenticationCacheName" value="authenticationCache"/>-->
-        <!--<property name="authorizationCachingEnabled" value="true"/>-->
-        <!--<property name="authorizationCacheName" value="authorizationCache"/>-->
+        <!-- 添加缓存实现，不用每次都去获取用户的角色、许可等 -->
+        <property name="authenticationCachingEnabled" value="true"/>
+        <property name="authenticationCacheName" value="authenticationCache"/>
+        <property name="authorizationCachingEnabled" value="true"/>
+        <property name="authorizationCacheName" value="authorizationCache"/>
     </bean>
 
     <!-- 会话ID生成器 -->
@@ -82,7 +83,7 @@
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="userRealm"/>
         <property name="sessionManager" ref="sessionManager"/>
-        <!-- <property name="cacheManager" ref="cacheManager"/> -->
+        <property name="cacheManager" ref="cacheManager"/>
         <property name="rememberMeManager" ref="rememberMeManager"/>
     </bean>
 
