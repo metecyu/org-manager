@@ -144,7 +144,7 @@ public class UserService {
 		// role.setOrgid(orgid);
 		user.setUsername(username);
 		user.setLoginid(loginid);
-		user.setPassword(pwd);
+		// user.setPassword(pwd);
 		user.setMobile(mobile);
 		user.setGender(gender);
 		user.setEmail(email);

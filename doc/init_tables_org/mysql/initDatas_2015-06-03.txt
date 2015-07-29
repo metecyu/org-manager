@@ -7,7 +7,7 @@ INSERT INTO ORG_ORG VALUES ('root', 'name', '—˘¿˝', 'y', '1', '1', null, '0', '—
 INSERT INTO ORG_ROLE VALUES ('admin', '≥¨º∂π‹¿Ì‘±', 'admin', 'y', null, '1', 'root', '∑«≥£¿˜∫¶µƒΩœ…´', null);
 
 
-INSERT INTO ORG_USER VALUES ('cjgly', 'admin', '≥¨º∂π‹¿Ì‘±', 'y', '111111', null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO ORG_USER VALUES ('cjgly', 'admin', '≥¨º∂π‹¿Ì‘±', 'y', 'd89267ba6e888426c8f798a04f2fb874', null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 
 INSERT INTO ORG_USERORGREL VALUES ('root', '0', 'y', 'cjgly', 'root');

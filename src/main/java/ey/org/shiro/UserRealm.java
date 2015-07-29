@@ -74,8 +74,11 @@ public class UserRealm extends AuthorizingRealm {
     	System.out.println(" doGetAuthenticationInfo 2 ...  ");
         String username = (String)token.getPrincipal();
         UsernamePasswordToken tokenPass= (UsernamePasswordToken)token;
-        String pwd = tokenPass.getPassword()+"";
+/*        String pwd = new String(tokenPass.getPassword());
         String md5 = new Md5Hash(pwd, "").toString();
+        String md52 = new Md5Hash(md5, "").toString();*/
+        
+        
         OrgUser user = userH.findByLonginId(username);
 
         if(user == null) {
@@ -87,9 +90,12 @@ public class UserRealm extends AuthorizingRealm {
         }*/
 
         //交给AuthenticatingRealm使用CredentialsMatcher进行密码匹配，如果觉得人家的不好可以自定义实现
+        //一次md5 96E79218965EB72C92A549DD5A330112
+        //二次md5 6456C7FAC445F3C1C3E7F4405159D80E
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
                 user.getLoginid(), //用户名
                 user.getPassword(), //密码
+                //"96E79218965EB72C92A549DD5A330112",
                 user.getUsername()
         );
         return authenticationInfo;

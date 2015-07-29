@@ -24,6 +24,7 @@ public class UserRightFilter implements Filter {
 	 * @throws IOException
 	 * @throws ServletException
 	 */
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 			HttpServletRequest req = (HttpServletRequest) request;
@@ -73,10 +74,12 @@ public class UserRightFilter implements Filter {
 	}
 
 
+	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 
 	}
 
+	@Override
 	public void destroy() {
 
 	}

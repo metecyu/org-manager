@@ -1,6 +1,5 @@
 package ey.org.web.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -14,7 +13,6 @@ import ey.org.bean.Pager;
 import ey.org.mgmodel.RoleOrgMG;
 import ey.org.model.Org;
 import ey.org.model.Role;
-import ey.org.model.User;
 import ey.org.service.OrgService;
 import ey.org.service.RoleService;
 import ey.org.utils.FinalValue;

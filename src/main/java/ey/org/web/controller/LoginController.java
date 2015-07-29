@@ -119,6 +119,7 @@ public class LoginController {
         }  
         if(error != null) {//出错了，返回登录页面  
         	request.setAttribute("error", error);  
+        	System.out.println("  登录失败  " + error);
         	return "/login";  
         } else {//登录成功  
         	//request.getRequestDispatcher("/index.jsp").forward(request, response);  

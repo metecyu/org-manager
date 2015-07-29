@@ -1,15 +1,10 @@
 package ey.org.dao;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
-import ey.org.model.Func;
 import ey.org.model.FuncRoleRel;
-import ey.org.model.User;
 
 
 

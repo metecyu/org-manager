@@ -385,7 +385,7 @@ public class BaseDao<T, PK extends Serializable>{
 						for(int j=0;j<st.length-1;j++){	
 							String alias = getAlias((CriteriaImpl)criteria, st[j]);
 							if(alias==null){
-								criteria.createAlias(st[j], st[j], Criteria.LEFT_JOIN);
+								criteria.createAlias(st[j], st[j], CriteriaSpecification.LEFT_JOIN);
 							}	
 						}
 					}
@@ -455,7 +455,7 @@ public class BaseDao<T, PK extends Serializable>{
 				for(int i=0;i<st.length-1;i++){		
 					String alias = getAlias((CriteriaImpl)criteria, st[i]);
 					if(alias==null){
-						criteria.createAlias(st[i], st[i], Criteria.LEFT_JOIN);
+						criteria.createAlias(st[i], st[i], CriteriaSpecification.LEFT_JOIN);
 					}
 				}
 			}
@@ -572,7 +572,7 @@ public class BaseDao<T, PK extends Serializable>{
 	 */
 	public Object findByIdObject(String id){
 		Assert.notNull(id, "id is required");
-		return (Object)getSession().get(entityClass, id);
+		return getSession().get(entityClass, id);
 	}
 	
 	/**

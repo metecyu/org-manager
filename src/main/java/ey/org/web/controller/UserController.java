@@ -1,6 +1,5 @@
 package ey.org.web.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -9,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -142,7 +142,9 @@ public class UserController {
 		String gender= ParamUtil.getParamValue(request.getParameter("gender"), "");
 		String mobile= ParamUtil.getParamValue(request.getParameter("mobile"), "");
 		String ret = "0";
-	
+		
+		SimpleHash hash= new SimpleHash("MD5", pwd, "", 2);
+		pwd = hash.toHex();
 		try {
 			User org = userService.addUser(orgid, username, loginid, pwd, email, gender,mobile);
 			ret = "1";
@@ -185,13 +187,13 @@ public class UserController {
 		String userid = ParamUtil.getParamValue(request.getParameter("userid"), "");
 		String username = ParamUtil.getParamValue(request.getParameter("username"), "");
 		String loginid = ParamUtil.getParamValue(request.getParameter("loginid"), "");
-		String pwd = ParamUtil.getParamValue(request.getParameter("pwd"), "");
+		// String pwd = ParamUtil.getParamValue(request.getParameter("pwd"), "");
 		String mobile= ParamUtil.getParamValue(request.getParameter("mobile"), "");
 		String email= ParamUtil.getParamValue(request.getParameter("email"), "");
 		String gender=ParamUtil.getParamValue(request.getParameter("gender"), "");
 		String ret = "0";
 		
-		User org = userService.updateUser(userid, username, loginid, pwd, email,gender, mobile); 
+		User org = userService.updateUser(userid, username, loginid, "noUpdatePassword", email,gender, mobile); 
 		ret = "1";
 		
 		ResponseUtil.writeResponseStr(response, ret);		

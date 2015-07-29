@@ -7,8 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 
-import ey.org.model.Func;
-
 @TransactionConfiguration(transactionManager="transactionManager",defaultRollback=false)  
 @ContextConfiguration(locations={"classpath:/springAnnotation-core.xml"})
 public class FuncServiceTest extends AbstractTransactionalJUnit4SpringContextTests  {

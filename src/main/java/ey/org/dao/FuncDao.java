@@ -11,7 +11,6 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import ey.org.model.Func;
-import ey.org.model.Org;
 import ey.org.utils.PinyinUtils;
 
 /**

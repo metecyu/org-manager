@@ -6,7 +6,6 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import ey.org.model.DataRoleRel;
-import ey.org.model.FuncRoleRel;
 
 
 

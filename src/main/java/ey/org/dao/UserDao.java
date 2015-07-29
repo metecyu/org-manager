@@ -11,7 +11,6 @@ import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import ey.org.model.User;
-import ey.org.model.UserRoleRel;
 import ey.org.utils.PinyinUtils;
 
 /**

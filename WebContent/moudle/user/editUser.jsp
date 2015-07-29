@@ -186,8 +186,8 @@
 							密码:
 						</th>
 						<td>
-							<input type="password" id="pwd" name="pwd" class="inputText ac_input" value="${user.password }" autocomplete="off" />
-							<label class="requireField">*</label>						
+							<input type="password" id="pwd" name="pwd" class="inputText ac_input" value="${user.password }" autocomplete="off"  disabled="disabled"/>
+						<!-- 	<label class="requireField">*</label>		 -->				
 						</td>
 					</tr>
 					<tr>
@@ -195,8 +195,8 @@
 							重复密码:
 						</th>
 						<td>
-							<input type="password" id="pwdRepeat" name="pwdRepeat" class="inputText ac_input" value="${user.password }" autocomplete="off" />
-							<label class="requireField">*</label>						
+							<input type="password" id="pwdRepeat" name="pwdRepeat" class="inputText ac_input" value="${user.password }" autocomplete="off"  disabled="disabled" />
+							<!-- <label class="requireField">*</label>	 -->					
 						</td>
 					</tr>
 				</tbody>
