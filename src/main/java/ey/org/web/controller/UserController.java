@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 
 import org.apache.shiro.crypto.hash.SimpleHash;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -36,7 +38,7 @@ public class UserController {
 	private OrgService orgService;
 	@Resource 
 	private UserService userService;
-	
+    final Logger log = LoggerFactory.getLogger(UserController.class);
 
 	/**
 	 * 查看组织列表
@@ -48,7 +50,9 @@ public class UserController {
 	 */
 	@RequestMapping("/beginViewUser")
 	public String beginViewUser(HttpServletRequest request){
-		String orgid = ParamUtil.getParamValue(request.getParameter("orgid"),FinalValue.ROOT_ORG_ID);
+        System.out.println("xxxxxxxxxxxxxxxxxx");
+        log.info(" 11111111111111111111             1111111111111");
+        String orgid = ParamUtil.getParamValue(request.getParameter("orgid"),FinalValue.ROOT_ORG_ID);
 		
 		String userCurrentPage = ParamUtil.getParamValue(request.getParameter("currentPage"),"1");
 		Org org = orgService.findById(orgid);		
@@ -72,7 +76,7 @@ public class UserController {
 		request.setAttribute("orgid", orgid);		
 		return "./moudle/user/viewUser";
 	}
-	
+
 	/**
 	 * 用户排序
 	 * @Title: beginSortUser
@@ -106,6 +110,7 @@ public class UserController {
 		request.setAttribute("levUserList", levUserList);
 		request.setAttribute("org", org);
 		request.setAttribute("orgid", orgid);
+
 		return "./moudle/user/sortUser2";
 	}
 	
@@ -142,7 +147,7 @@ public class UserController {
 		String gender= ParamUtil.getParamValue(request.getParameter("gender"), "");
 		String mobile= ParamUtil.getParamValue(request.getParameter("mobile"), "");
 		String ret = "0";
-		
+
 		SimpleHash hash= new SimpleHash("MD5", pwd, "", 2);
 		pwd = hash.toHex();
 		try {
@@ -234,14 +239,14 @@ public class UserController {
 		}
 		ResponseUtil.writeResponseStr(response, ret);		
 	}
-	
+
 	/**
 	 * 批量删除
 	 * @Title: batchDeleteRole
 	 * @author yzp
 	 * @date 2014-9-4 上午9:11:59
-	 * @return String   1：成功  ; 0：不成功 
-	 * @throws 
+	 * @return String   1：成功  ; 0：不成功
+	 * @throws
 	 * @Description: TODO(这里用一句话描述这个方法的作用)
 	 */
 	@RequestMapping("/batchDeleteUser")
@@ -249,14 +254,14 @@ public class UserController {
 		String[] roleids = request.getParameterValues("ids[]");
 		String ret = "0";
 		/**/
-		for(String userid:roleids){		 
+		for(String userid:roleids){
 			userService.deleteUser(userid);
 		}
-		// 
+		//
 		ret = "1";
-		ResponseUtil.writeResponseStr(response, ret);		
+		ResponseUtil.writeResponseStr(response, ret);
 	}
-	
+
 /*	public void moveUser(HttpServletRequest request,HttpServletResponse response){
 		String userid1=ParamUtil.getParamValue(request.getParameter("userid1"), "");
 		String userid2=ParamUtil.getParamValue(request.getParameter("userid2"), "");

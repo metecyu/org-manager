@@ -110,12 +110,10 @@
 					</td>
 				</tr>
 				<tr>
-					<th>
-						角色编号:
 					</th>
 					<td>
-						<input type="text" id="roleSign" name="roleSign" class="inputText ac_input" value="ttt" autocomplete="off" value='ttt'>
-					
+						<input type="text" id="roleSign" name="roleSign" class="inputText ac_input" value="" autocomplete="off" value=''>
+
 					</td>
 				</tr>
 				<tr>

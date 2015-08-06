@@ -70,7 +70,7 @@
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 				<prop key="hibernate.hbm2ddl.auto">false</prop><!-- 加载hibernate自动更新数据库结构 -->
-                <prop key="hibernate.show_sql">true</prop> <!-- 是否在控制台打印sql -->
+                <prop key="hibernate.show_sql">false</prop> <!-- 是否在控制台打印sql -->
                 <prop key="hiberante.format_sql">true</prop><!-- 输出格式化后的sql更方便观看 -->
 			</props>
 		</property>

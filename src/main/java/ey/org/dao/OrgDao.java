@@ -37,7 +37,8 @@ public class OrgDao extends BaseDao<Org,String> {
 	public List<Org> getAllOrgList(){
 		String hql=" from Org org where org.iseffect='y' order by org.pid, org.sort";
 		Query query=this.getSession().createQuery(hql);
-		// query.setParameter("orgid", orgid);	
+		// query.setParameter("orgid", orgid);3
+        
 		return query.list();
 	}
 	/**
