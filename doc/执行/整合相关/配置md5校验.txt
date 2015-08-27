@@ -1,0 +1,5 @@
+﻿是否需要md5校验 需要修改两个地方
+1. spring-config-shiro.xml
+	userRealm 中添加credentialsMatcher则使用md5，反之则是明文校验
+2. 新建用户的时候是否对密码进行md5加密
+	

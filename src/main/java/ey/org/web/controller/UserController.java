@@ -19,6 +19,7 @@ import ey.org.model.Org;
 import ey.org.model.User;
 import ey.org.service.OrgService;
 import ey.org.service.UserService;
+import ey.org.shiro.UserRealm;
 import ey.org.utils.FinalValue;
 import ey.org.utils.ParamUtil;
 import ey.org.utils.ResponseUtil;
@@ -39,6 +40,8 @@ public class UserController {
 	@Resource 
 	private UserService userService;
     final Logger log = LoggerFactory.getLogger(UserController.class);
+    @Resource 
+    UserRealm userRealm;
 
 	/**
 	 * 查看组织列表
@@ -147,9 +150,16 @@ public class UserController {
 		String gender= ParamUtil.getParamValue(request.getParameter("gender"), "");
 		String mobile= ParamUtil.getParamValue(request.getParameter("mobile"), "");
 		String ret = "0";
-
-		SimpleHash hash= new SimpleHash("MD5", pwd, "", 2);
-		pwd = hash.toHex();
+		userRealm.getCredentialsMatcher();
+		
+		if (userRealm.getCredentialsMatcher() instanceof ey.org.shiro.RetryLimitHashedCredentialsMatcher){
+			// 使用md5加密
+			SimpleHash hash= new SimpleHash("MD5", pwd, "", 2);
+			pwd = hash.toHex();
+		}else if(userRealm.getCredentialsMatcher() instanceof org.apache.shiro.authc.credential.SimpleCredentialsMatcher){
+			//System.out.println("xxx");
+		}
+		
 		try {
 			User org = userService.addUser(orgid, username, loginid, pwd, email, gender,mobile);
 			ret = "1";

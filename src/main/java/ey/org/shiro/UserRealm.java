@@ -26,7 +26,7 @@ import ey.orgclient.pub.model.OrgRole;
 import ey.orgclient.pub.model.OrgUser;
 
 /**
- * <p>User: Zhang Kaitao
+ * <p>User: yzp
  * <p>Date: 14-1-28
  * <p>Version: 1.0
  */
@@ -84,6 +84,7 @@ public class UserRealm extends AuthorizingRealm {
         if(user == null) {
             throw new UnknownAccountException();//没找到帐号
         }
+        this.getCredentialsMatcher();
 
        /* if(Boolean.TRUE.equals(user.getLocked())) {
             throw new LockedAccountException(); //帐号锁定
